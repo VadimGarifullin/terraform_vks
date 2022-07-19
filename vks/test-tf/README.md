@@ -20,7 +20,7 @@ private_key="terraform.pem"
 ```
 изменяя pod_count, мы регулируем сколько виртуальных машин pod будет создано
 
-## Не забудьте сгенерировать ssh ключ
+### Не забудьте сгенерировать ssh ключ
 ```
 ssh-keygen -b 2048 -t rsa -C 'Terraform' -N '' -f 'terraform.pem'
 ```
