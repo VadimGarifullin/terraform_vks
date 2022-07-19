@@ -6,7 +6,7 @@
 touch ~/.terraformrc
 ```
 
-###В файле должно находиться следующее
+### В файле должно находиться следующее
 ```
 provider_installation {
   network_mirror {
