@@ -20,7 +20,7 @@ provider_installation {
   }
 }
 ```
-Этого будет достаточно, при использовании terraform init, провайдеры будут браться из локальных испочников, в случае hashicorp providers, будет работать без vpn)
+Этого будет достаточно, при использовании terraform init, провайдеры будут браться из локальных испочников, в случае hashicorp providers, будет работать без vpn) Обратите внимание только на path, у вас будет другой путь скорее всего, либо файлы репозитория должны быть склонированы в /opt/terraform/
 
 Установка terraform:
 https://learn.hashicorp.com/tutorials/terraform/install-cli
