@@ -1,8 +1,13 @@
-Базовый репозиторий с описанием инфраструктуры terraform и ansible
+## Базовый репозиторий с описанием инфраструктуры terraform и ansible
+
+
 Нужные провайдеры залиты в репозиторий, в директории plugins, для их использования нужно создать файл .terraformrc в домашней папке своего пользователя
 ```
 touch ~/.terraformrc
-#в файле должно находиться следующее
+```
+
+###В файле должно находиться следующее
+```
 provider_installation {
   network_mirror {
     url = "https://hub.mcs.mail.ru/repository/terraform-providers/"
@@ -14,7 +19,8 @@ provider_installation {
 
   }
 }
-#этого будет достаточно, при использовании terraform init, провайдеры будут браться из локальных испочников, в случае hashicorp providers, будет работать без vpn)
 ```
+Этого будет достаточно, при использовании terraform init, провайдеры будут браться из локальных испочников, в случае hashicorp providers, будет работать без vpn)
+
 Установка terraform:
 https://learn.hashicorp.com/tutorials/terraform/install-cli
