@@ -1,0 +1,31 @@
+---
+- hosts: local
+  become: true
+  gather_facts: no
+  tasks:
+  - name: Install required system packages
+    apt: name={{ item }} state=latest update_cache=yes
+    loop: [ 'apt-transport-https', 'curl', 'wget']
+
+  - name: get link
+    shell: curl https://hub.mcs.mail.ru/repository/terraform-binary/mirror/latest/ | grep linux_amd64.zip | sed 's/.*href="//g;s/".*//g'
+    register: link_tf
+
+  - debug: msg="{{ link_tf.stdout }}"
+
+  - name: Download binaries
+    get_url:
+      url: "{{ link_tf.stdout }}"
+      dest: /tmp/terraform.zip
+    register: bin_files
+
+  - name: UNZIPPING the files
+    unarchive:
+      src: /tmp/terraform.zip
+      dest: /usr/bin/
+      copy: no
+    with_items:
+    - "{{ bin_files }}"
+  
+
+
