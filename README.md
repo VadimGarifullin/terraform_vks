@@ -25,6 +25,21 @@ provider_installation {
 Установка terraform:
 https://learn.hashicorp.com/tutorials/terraform/install-cli
 
+Установка terraform с зеркала vk cloud https://hub.mcs.mail.ru/repository/terraform-binary/mirror/latest/
+Копируем ссылку последней версии terraform, так же можно получить командой:
+```
+curl https://hub.mcs.mail.ru/repository/terraform-binary/mirror/latest/ | grep linux_amd64.zip | s
+ed 's/.*href="//g;s/".*//g'
+```
+Устанавливаем пакет wget и подставляем эту ссылку, версия может отличаться:
+```
+wget http://hub.mcs.mail.ru/repository/terraform-binary/mirror/latest/terraform_1.1.9_linux_amd64.zip
+```
+Теперь распаковываем и перемещаем:
+```
+unzip terraform*
+mv terraform /usr/bin/
+```
 Скачать провайдера:
 https://releases.hashicorp.com/
 
