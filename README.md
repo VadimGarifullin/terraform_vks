@@ -35,7 +35,7 @@ ed 's/.*href="//g;s/".*//g'
 ```
 wget http://hub.mcs.mail.ru/repository/terraform-binary/mirror/latest/terraform_1.1.9_linux_amd64.zip
 ```
-Теперь распаковываем и перемещаем:
+Теперь распаковываем и перемещаем в каталог программ:
 ```
 unzip terraform*
 mv terraform /usr/bin/
